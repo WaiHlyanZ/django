@@ -8,7 +8,6 @@ we need to link sub-app urls.py to main-app mysite's urls.py (same name as the p
 Let say
 our `mysite/urls.py`'s:
 
-
 ```
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -18,6 +17,10 @@ urlpatterns = [
 
 the user'path is `http://127.0.0.1:8000/home/start`
 
-we will look is anything match to home/ in `mysite/urls.py` 
+we will look is anything match to home/ in `mysite/urls.py`
 
 it was so it go `main.urls` and search for is  `start` in `main.urls.urlpatterns` then it is do the specifice function
+
+### Navigating urls and views
+
+sub-app.urls ကို သွားစေချင်ရင် project နဲ့ နာမည်အတူတူ main-app ထဲက urls.py ထဲမှာ ကိုယ်သွားစေချင်တဲ့ url name ထားပါတော့ home/ ဆိုရင် home နဲ့ဆိုင်တဲ့ app.urls ထဲသွားပေါ့ ပြီးမှ home/ ရဲ့ နောက်က ဘာဆက်ပါလဲ home/v1 ဆိုရင် home/ ဒါမှမဟုတ် home ကြီးက အစောပိုင်း main-app.urls ထဲမှာ တူလို့ဖြတ်ယူပြီးသွားပြီ ကျန်တာက /v1 ဒါမှမဟုတ် v1 u sub-app.urls ထဲမှာ ရှိတယ်ဆိုရင် သူ run စေချင်တဲ့ function ကို run ပေါ့
