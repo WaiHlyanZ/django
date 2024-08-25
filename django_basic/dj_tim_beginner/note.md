@@ -25,20 +25,19 @@ it was so it go `main.urls` and search for is  `start` in `main.urls.urlpatterns
 
 sub-app.urls ကို သွားစေချင်ရင် project နဲ့ နာမည်အတူတူ main-app ထဲက urls.py ထဲမှာ ကိုယ်သွားစေချင်တဲ့ url name ထားပါတော့ home/ ဆိုရင် home နဲ့ဆိုင်တဲ့ app.urls ထဲသွားပေါ့ ပြီးမှ home/ ရဲ့ နောက်က ဘာဆက်ပါလဲ home/v1 ဆိုရင် home/ ဒါမှမဟုတ် home ကြီးက အစောပိုင်း main-app.urls ထဲမှာ တူလို့ဖြတ်ယူပြီးသွားပြီ ကျန်တာက /v1 ဒါမှမဟုတ် v1 u sub-app.urls ထဲမှာ ရှိတယ်ဆိုရင် သူ run စေချင်တဲ့ function ကို run ပေါ့
 
-
 ### Database in Django
 
-create models (classes) in models.py 
+create models (classes) in models.py
 
 write your fields in that classes
 
 instance variable of model.Field are the name of that field
 
-then tell Django that you setup the db by putting `app_name.apps.PollsConfig` inside `INSTALLED_APPS` 
+then tell Django that you setup the db by putting `app_name.apps.PollsConfig` inside `INSTALLED_APPS`
 
-in this case `main.apps.MainConfig` is added inside `INSTALLED_APPS` 
+in this case `main.apps.MainConfig` is added inside `INSTALLED_APPS`
 
-After all, 
+After all,
 
 ```
 # run this
@@ -54,3 +53,13 @@ Migrations for 'main':
     - Create model ToDoList
     - Create model Item
 ```
+
+To apply changes:
+
+```
+python manage.py migrate
+```
+
+* Change your models (in models.py).
+* Run python manage.py makemigrations to create migrations for those changes
+* Run python manage.py migrate to apply those changes to the database.
