@@ -23,6 +23,6 @@ urlpatterns = [
     #ip_address/home ဆိုရင် main.urls ထဲက root path ကိုလိုက်ရှာမယ် `path("", views.index, name="index"),` views ထဲ က index function ကို အလုပ်လုပ်မယ်
     #ip_address/home/v1 ဆိုရင် main.urls ထဲက root path ကိုလိုက်ရှာမယ် `path("/v1", views.view1, name="view_1"),` views ထဲ က view1 function ကို အလုပ်လုပ်မယ် 
     #                                                                    /v1 ဆိုတဲ့ရေးပုံလေးက sub-url ဆိုတဲ့သဘော
-    path("home/", include("main.urls")), 
+    path("", include("main.urls")), 
 
 ]
