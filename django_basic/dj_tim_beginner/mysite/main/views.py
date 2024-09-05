@@ -5,9 +5,12 @@ from .models import ToDoList, Item
 # Create your views here.
 def index(response, id):
     ls = ToDoList.objects.get(id=id)
-    tasks = ls.item_set.get(id=1)
-    # return HttpResponse(f"<h1>{ls.name}</h1>\n<h2>{tasks}</h2>")
-    return HttpResponse("<h1>%s</h1><br><p>%s</p>" %(ls.name, tasks.text))
+    # the name will be searched through base.html and put the value (ls.name)
+    # we can also loop throught the dict obj variable from our databasse and then pass into the render function
+
+    # don't use the base.html as one of the view; just extend that
+    # return render(response, "main/base.html", {"name": ls.name})
+    return render(response, "main/todolist.html", {"name": ls.name})
 
 def home(response):
-    return HttpResponse("<h1>Home page</h1>")
+    return render(response, "main/home.html")
