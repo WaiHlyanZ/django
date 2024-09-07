@@ -10,7 +10,7 @@ def index(response, id):
 
     # don't use the base.html as one of the view; just extend that
     # return render(response, "main/base.html", {"name": ls.name})
-    return render(response, "main/todolist.html", {"name": ls.name})
+    return render(response, "main/todolist.html", {"ls": ls})
 
 def home(response):
     return render(response, "main/home.html")

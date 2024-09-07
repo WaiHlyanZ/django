@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 class ToDoList(models.Model):
+    # name would be the field header 
     name = models.CharField(max_length=200)
 
     def __str__(self) -> str:

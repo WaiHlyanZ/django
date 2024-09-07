@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Template</title>
+    <title>{% block title %}Base template{% endblock title %}</title>
 </head>
 <body>
     
@@ -11,6 +11,6 @@
     <div id="content", name="content">
         {% block content %}{% endblock content %}
     </div>
-    <h3>{{name}}</h3>
+    
 </body>
 </html>
